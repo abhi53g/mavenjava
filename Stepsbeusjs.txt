@@ -1,3 +1,228 @@
+WEEK-4: GIT LAB MANUAL
+
+Title
+Working With Git Local and Remote Repository
+
+Objective
+To initialize a Git repository locally and push code to a private GitHub repository.
+
+Prerequisites
+Git installed, GitHub account, Local project folder
+
+Procedure
+
+Go to the project folder
+
+Initialize a Git repository
+git init
+
+Configure username
+git config --global user.name "Your Name"
+
+Configure email
+git config --global user.email "youremail@example.com
+"
+
+Check file status
+git status
+
+Add all files to staging
+git add .
+
+Commit the files
+git commit -m "Initial commit"
+
+Rename branch to main
+git branch -M main
+
+Add remote GitHub URL
+git remote add origin <repo-url>
+
+Push project to GitHub
+git push -u origin main
+
+Additional Commands
+11. Clone a repository: git clone <url>
+12. Create a new branch: git checkout -b feature/login
+13. Merge branch into main: git merge feature/login
+14. Undo a commit: git revert <commit-id>
+15. View commit history: git log --oneline
+16. View changes: git diff
+
+──────────────────────────────────────────
+WEEK-5: DOCKER LAB MANUAL
+
+Title
+Working With Docker Containers and Images
+
+Objective
+To run, stop, manage, and remove Docker containers and images.
+
+Prerequisites
+Docker installed, Internet connection
+
+Procedure
+
+Pull Redis image
+docker pull redis
+
+Run Redis container
+docker run --name my-redis -d redis
+
+Check running containers
+docker ps
+
+Access Redis CLI
+docker exec -it my-redis redis-cli
+
+Stop the container
+docker stop my-redis
+
+Start the container
+docker start my-redis
+
+Remove the container
+docker rm my-redis
+
+Remove the image
+docker rmi redis
+
+Working With Dockerfile
+9. Create a folder and create Dockerfile
+10. Add instructions:
+FROM redis:latest
+CMD ["redis-server"]
+11. Build image
+docker build -t redisnew .
+12. Run container
+docker run --name myredisnew -d redisnew
+13. List all containers
+docker ps -a
+14. Commit container as image
+docker commit <container-id> username/redis1
+15. View images
+docker images
+16. Push image to Docker Hub
+docker push username/redis1
+17. Logout from Docker Hub (optional)
+docker logout
+
+──────────────────────────────────────────
+WEEK-6: DOCKER COMPOSE LAB MANUAL
+
+Title
+Running Multi-Container Applications Using Docker Compose
+
+Objective
+To run and manage multi-container applications using docker-compose.
+
+Prerequisites
+Docker + Docker Compose installed
+
+Procedure
+
+Create a folder named compose-lab
+
+Create docker-compose.yml
+
+Add content
+version: "3.9"
+services:
+web:
+image: nginx
+ports:
+- "8080:80"
+db:
+image: postgres:15
+environment:
+POSTGRES_USER: demo
+POSTGRES_PASSWORD: demo
+POSTGRES_DB: demo_db
+
+Start services
+docker compose up -d
+
+Check running services
+docker compose ps
+
+Open browser: http://localhost:8080
+
+Add Redis as a new service
+
+Restart services
+docker compose up -d
+
+Add networks and volumes for persistence
+
+Scale the web container
+docker compose up --scale web=2 -d
+
+Stop and remove containers
+docker compose down
+
+──────────────────────────────────────────
+WEEK-7: MAVEN LAB MANUAL
+
+Title
+Building Java and Web Applications Using Maven
+
+Objective
+To build Java and Web applications using Maven build lifecycle and dependencies.
+
+Prerequisites
+Java installed, Maven installed, IDE optional
+
+Procedure
+
+Create Maven Java project
+
+Build the project
+mvn clean install
+
+Add dependencies in pom.xml (Example: Gson)
+
+Run update build
+mvn clean install
+
+Execute unit tests
+mvn test
+
+Create Maven Web project
+
+Add Servlet API dependency in pom.xml
+
+Configure Apache Tomcat server
+
+Build Web project
+mvn clean install
+
+Package the project
+mvn package
+
+Locate generated WAR file
+target/*.war
+
+Deploy WAR file on Tomcat server
+
+Access project using server port in browser
+
+Configure Maven compiler plugin to set Java version
+
+Enable executable JAR creation using maven-jar-plugin
+
+Run the JAR
+java -jar target/app.jar
+
+Create a Multi-Module Maven project
+
+Build in order: Parent → Module1 → Module2
+
+
+
+
+
+
+
 https://github.com/Achilles007-AD/Services
 https://github.com/KumaraswamyBakkashetti/login-app1/edit/main/requirements.txt
 
